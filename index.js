@@ -13,15 +13,13 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("Backend is running successfully 🚀");
-});
+
 // routes
 app.use('/api/user', userRouter)
 app.use('/api/chat', chatRouter)
 app.use('/api/message', messageRoute)
 
-// app.listen(process.env.PORT, () => {
-//   console.log(` Server is running port ${process.env.PORT}`);
-// }
+app.listen(process.env.PORT, () => {
+  console.log(` Server is running port ${process.env.PORT}`);
+}
 )
